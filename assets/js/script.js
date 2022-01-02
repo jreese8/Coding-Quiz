@@ -43,29 +43,29 @@ var QuestionIndex = 0
 
   var questions = [
 
-    { q: 'Which of the following is not required to create a for loop?', 
-      a: '3. Variable', 
-      choices: [{choice: '1. Condition'}, {choice: '2. Increment'}, {choice: '3. Variable'}, {choice: '4. Initialization'}]
+    { q: 'Commonly used data types do NOT include:', 
+      a: '3. alerts', 
+      choices: [{choice: '1. strings'}, {choice: '2. booleans'}, {choice: '3. alerts'}, {choice: '4. numbers'}]
     },
 
-    { q: 'In an if/else statement, what are conditions placed within?', 
-      a: '2. Parenthesis', 
-      choices: [{choice: '1. Curly brackets'}, {choice: '2. Parenthesis'}, {choice: '3. Apostrophes'}, {choice: '4. Commas'}]
-    },
-
-    { q: 'A loop that never ends is called a ________.', 
-      a: '1. infinite loop', 
-      choices: [{choice: '1. infinite loop'}, {choice: '2. for loop'}, {choice: '3. while loop'}, {choice: '4. none of the above'}]
+    { q: 'The condition in an if/else statement is enclosed with ____.', 
+      a: '2. parenthesis', 
+      choices: [{choice: '1. curly brackets'}, {choice: '2. parenthesis'}, {choice: '3. quotes'}, {choice: '4. commas'}]
     },
 
     { q: 'Arrays in Javascript can be used to store ________.', 
     a: '4. all of the above', 
     choices: [{choice: '1. strings'}, {choice: '2. booleans'}, {choice: '3. numbers'}, {choice: '4. all of the above'}]
     },
+
+    { q: 'String values must be enclosed within _____ when being assigned to variables.', 
+      a: '1. quotes', 
+      choices: [{choice: '1. quotes'}, {choice: '2. commas'}, {choice: '3. curly brackets'}, {choice: '4. parenthesis'}]
+    },
         
-    { q: '_____ is the process of locating and correcting errors within a program.', 
-      a: '1. Debugging', 
-      choices: [{choice: '1. Debugging'}, {choice: '2. Executing'}, {choice: '3. Scanning'}, {choice: '4. Compiling'}]    
+    { q: 'A very useful tool used during development and debugging for printing content to the debugger is:', 
+      a: '4. console.log', 
+      choices: [{choice: '1. JavaScript'}, {choice: '2. terminal/bash'}, {choice: '3. for loop'}, {choice: '4. console.log'}]    
     },
     {},
   ];
