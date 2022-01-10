@@ -1,3 +1,5 @@
+//selectors for various btns, timer, etc
+
 var containerOneEl = document.getElementById("container-one");
       
 var containerTwoEl = document.getElementById("container-two");
@@ -39,7 +41,11 @@ var gameover
 
 var HighScores = [];
 
+//Accumulator or a counter
+
 var QuestionIndex = 0
+
+// Questions Object
 
   var questions = [
 
@@ -92,11 +98,14 @@ var QuestionIndex = 0
         }
     }
 
+    //Sets the time at 75 seconds
     var setTime = function () {
         timeleft = 75;
 
     var timercheck = setInterval(function() {
+        //Checking how much time is left
         timerEl.innerText = timeleft;
+        // timeleft -- = timeleft -1
         timeleft--
 
         if (gameover) {
@@ -124,7 +133,9 @@ var QuestionIndex = 0
     
     var setQuestion = function() {
         resetAnswers()
-        displayQuestion(questions[QuestionIndex])
+        // QuestionIndex is the 0 - 4 of my questions
+        // Questions is the array
+        showQuestion(questions[QuestionIndex])
     }
 
     var resetAnswers = function() {
@@ -146,38 +157,47 @@ var QuestionIndex = 0
         };
 
     var answerCorrect = function() {
-        if (correctEl.className = "hide") {
-            correctEl.classList.remove("hide")
-            correctEl.classList.add("banner")
-            incorrectEl.classList.remove("banner")
-            incorrectEl.classList.add("hide")
-            }
-        }  
+       // Displays correct at the bottom when an question is answered correctly
+       if (correctEl.className = "hide") {
+        correctEl.classList.remove("hide")
+        correctEl.classList.add("banner")
+        incorrectEl.classList.remove("banner")
+        incorrectEl.classList.add("hide")
+        }
+    //Adds 10 to score for correct answers
+    score = score + 10
+    
+}  
 
     var answerIncorrect = function() {
-        if (incorrectEl.className = "hide") {
-            incorrectEl.classList.remove("hide")
-            incorrectEl.classList.add("banner")
-            correctEl.classList.remove("banner")
-            correctEl.classList.add("hide")
-        }
+       //Displays incorrect at the bottom when an question is answered incorrectly
+       if (incorrectEl.className = "hide") {
+        incorrectEl.classList.remove("hide")
+        incorrectEl.classList.add("banner")
+        correctEl.classList.remove("banner")
+        correctEl.classList.add("hide")
     }
+    //Subtracts 10 from time when answered incorrectly
+    timeleft = timeleft - 10;
+    //Subtracts 1 from score when answered incorrectly
+    score = score - 1;
+}
    
     var answerCheck = function(event) {
         var selectedanswer = event.target
-            if (questions[QuestionIndex].a === selectedanswer.innerText){
+             //if my answer is correct
+             if (questions[QuestionIndex].a === selectedanswer.innerText){
                 answerCorrect()
-                score = score + 10
             }
-
+        //else if answer is incorrect
             else {
               answerIncorrect()
-              score = score - 1;
-              timeleft = timeleft - 10;
           };
-
+        // ++ = + 1
           QuestionIndex++
+          // + 1 adds to the index of questions to move on in questions. i.e. on index 1, + 1 = moves onto index 2.
             if  (questions.length > QuestionIndex + 1) {
+                //If another question, set that question
                 setQuestion()
             }   
             else {
